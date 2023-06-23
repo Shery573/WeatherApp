@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/routes/app_routes.dart';
 
 void main() {
@@ -17,8 +18,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.deepOrange,
+          hintStyle: GoogleFonts.lexendDeca(
+            textStyle: const TextStyle(
+                fontWeight: FontWeight.w600, color: Colors.white),
+          ),
+          border: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Colors.black,
+                width: 2,
+              ),
+              borderRadius: BorderRadius.circular(10)),
+        ),
       ),
-      initialRoute: AppRoutes.initialRoute,
+      initialRoute: AppRoutes.signUp,
       getPages: AppRoutes.pages,
     );
   }
